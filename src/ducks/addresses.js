@@ -27,6 +27,35 @@ const RINKEBY = {
   },
 };
 
+const ROPSTEN = {
+  factoryAddress: '0x9c83dCE8CA20E9aAF9D3efc003b2ea62aBC08351',
+  exchangeAddresses: {
+    addresses: [
+      ['BAT','0x074A5A449B611A446CAb65F37cc9A674061e0Ad1'],
+      ['DAI','0x31324D9d38bd9226D2b632C53E5117E711B24bE8'],
+      ['MKR','0x0eBfaa62E5E5ba101B694C789Eb99B840724D328'],
+      ['OMG','0x5e198F5F89C62F7E685788434e16Aa7320C093fF'],
+      // ['ZRX',''],
+    ],
+    fromToken: {
+      '0x60B10C134088ebD63f80766874e2Cade05fc987B': '0x074A5A449B611A446CAb65F37cc9A674061e0Ad1',
+      '0x7d5E6A841Ec195F30911074d920EEc665A973A2D': '0x31324D9d38bd9226D2b632C53E5117E711B24bE8',
+      '0x4A47be893dDeF62696800ffCDDb8476C92Ab4221': '0x0eBfaa62E5E5ba101B694C789Eb99B840724D328',
+      '0x9820b36a37af9389a23acfb7988c0ee6837763b6': '0x5e198F5F89C62F7E685788434e16Aa7320C093fF',
+      // '': '',
+    },
+  },
+  tokenAddresses: {
+    addresses: [
+      ['BAT','0x60B10C134088ebD63f80766874e2Cade05fc987B'],
+      ['DAI','0x7d5E6A841Ec195F30911074d920EEc665A973A2D'],
+      ['MKR','0x4A47be893dDeF62696800ffCDDb8476C92Ab4221'],
+      ['OMG','0x9820b36a37af9389a23acfb7988c0ee6837763b6'],
+      // ['ZRX',''],
+    ],
+  },
+};
+
 const MAIN = {
   factoryAddress: '0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95',
   exchangeAddresses: {
@@ -162,6 +191,13 @@ export const setAddresses = networkId => {
       return {
         type: SET_ADDRESSES,
         payload: MAIN,
+      };
+    // Ropsten
+    case 3:
+    case '3':
+      return {
+        type: SET_ADDRESSES,
+        payload: ROPSTEN,
       };
     // Rinkeby
     case 4:
