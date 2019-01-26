@@ -85,8 +85,8 @@ class BlockingWarning extends Component {
     } = this.props;
     let content = [];
 
-    const correctNetworkId = process.env.REACT_APP_NETWORK_ID || 3;
-    const correctNetwork = process.env.REACT_APP_NETWORK || 'Ropsten Ethereum Network';
+    const correctNetworkId = process.env.REACT_APP_NETWORK_ID || 1;
+    const correctNetwork = process.env.REACT_APP_NETWORK || 'Main Ethereum Network';
 
     const wrongNetwork = networkId != correctNetworkId;
 
